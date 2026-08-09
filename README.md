@@ -76,3 +76,13 @@ can also do the wrong thing. Professionals follow these rules too.
    server on the internet is trustworthy.
 6. **Never point an agent at real accounts** (email, banking, school portal) without
    talking it through with Dad first.
+
+## License
+
+This course is dual-licensed:
+
+- **Course content** (labs, notes, glossary, guides) —
+  [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- **Code** (finance-app, reference scripts) — [MIT](LICENSE-MIT)
+
+See [LICENSE](LICENSE) for details.

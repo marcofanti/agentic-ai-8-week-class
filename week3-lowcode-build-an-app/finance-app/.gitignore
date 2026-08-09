@@ -1,0 +1,60 @@
+# --- Secrets — never commit these ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- macOS ---
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# --- Node / web ---
+node_modules/
+dist/
+build/
+.vite/
+*.local
+npm-debug.log*
+yarn-error.log*
+
+# --- Python / uv ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# --- IDEs & editors ---
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.zed/
+.fleet/
+
+# --- AI coding tools (local state, not shared config) ---
+# CLAUDE.md and .claude/skills are meant to be committed — only ignore local state
+.claude/settings.local.json
+CLAUDE.local.md
+.codex/
+.gemini/
+.cursor/
+.aider*
+.copilot/
+.windsurf/
+
+# --- Logs & temp ---
+*.log
+tmp/
+temp/
+notes.txt

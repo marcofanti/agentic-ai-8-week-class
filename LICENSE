@@ -1,0 +1,15 @@
+This repository uses two licenses:
+
+1. Course content — CC BY 4.0
+   All written course material (lab instructions, solution notes, the
+   glossary, setup guides, and other Markdown documents) is licensed under
+   the Creative Commons Attribution 4.0 International License.
+   See LICENSE-CC-BY-4.0 or https://creativecommons.org/licenses/by/4.0/
+
+2. Code — MIT
+   All source code (the week3 finance-app, reference scripts such as
+   mini_agent_reference.py and eval_harness_reference.py, and any other
+   code samples) is licensed under the MIT License.
+   See LICENSE-MIT
+
+Copyright (c) 2026 Marco Fanti

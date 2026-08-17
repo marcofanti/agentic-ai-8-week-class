@@ -1,5 +1,8 @@
 # Setup — Getting Your Mac Ready
 
+> On a Windows PC? Use [SETUP_WINDOWS.md](SETUP_WINDOWS.md) instead. Same steps, Windows
+> commands.
+
 Work through this top to bottom. Every step ends with a **✓ Verify** command — run it and
 make sure you see what's expected before moving on. If a verify step fails, stop and fix it
 (or ask for help) before continuing. Total time: roughly 60–90 minutes.

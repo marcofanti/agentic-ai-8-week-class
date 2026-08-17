@@ -230,8 +230,8 @@ Then do the commit + push from the Tooling habit section.
 ## 🆘 If you get stuck
 
 - **`ANTHROPIC_API_KEY` / authentication error** → your key isn't visible to the script.
-  Run `echo $ANTHROPIC_API_KEY` — if it prints nothing, open a new terminal window (or
-  `source ~/.zshrc`) and try again.
+  Run `echo $ANTHROPIC_API_KEY` (Windows: `echo $env:ANTHROPIC_API_KEY`) — if it prints
+  nothing, open a new terminal window (Mac: or `source ~/.zshrc`) and try again.
 - **`ModuleNotFoundError: anthropic`** → you probably ran `python agent.py`. Always
   `uv run agent.py` — uv knows about the package, plain python doesn't.
 - **The loop never ends** → add a counter and stop after ~10 laps, then print

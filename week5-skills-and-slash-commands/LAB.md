@@ -8,8 +8,8 @@ everything you write in one — that way your skills have history and live on Gi
 everything else you build.
 
 ```bash
-mkdir -p ~/projects/my-skills
-cd ~/projects/my-skills
+mkdir -p ~/Desktop/projects/my-skills
+cd ~/Desktop/projects/my-skills
 git init
 echo "# My Claude Code skills" > README.md
 git add . && git commit -m "chore: start my-skills repo"
@@ -92,7 +92,7 @@ study guide formatted the way *you* like to study.
 
 Use real notes from a real class — the lab works better when you actually care about the
 output. Export/copy them into a plain text or markdown file, e.g.
-`~/projects/my-skills/notes.md`. No digital notes? Spend 10 minutes typing up one chapter's
+`~/Desktop/projects/my-skills/notes.md`. No digital notes? Spend 10 minutes typing up one chapter's
 worth from a paper notebook. (Don't skip this — a skill tested on fake notes is a fake test.)
 
 ### Step 2 — Create the skill (15 min)
@@ -146,7 +146,7 @@ actual words a person would say ("study", "test", "quiz", "flashcards").
 Skills are loaded when a session starts, so you always test in a **fresh session**:
 
 ```bash
-cd ~/projects/my-skills
+cd ~/Desktop/projects/my-skills
 claude
 ```
 
@@ -200,7 +200,7 @@ Requirements:
 **Finish with the tooling habit** — copy your skills into the repo and push:
 
 ```bash
-cd ~/projects/my-skills
+cd ~/Desktop/projects/my-skills
 cp -R ~/.claude/skills/study-guide .
 cp -R ~/.claude/skills/<your-second-skill-name> .
 git add . && git commit -m "feat: study-guide and hobby skill"

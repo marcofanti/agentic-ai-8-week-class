@@ -2,7 +2,7 @@
 
 ## What success looks like
 
-- `~/projects/mini-agent` has an `evals/` folder on branch `week7-lab` with
+- `~/Desktop/projects/mini-agent` has an `evals/` folder on branch `week7-lab` with
   `tasks.json` (~10 tasks, both types) and a working `run_evals.py` that prints a
   per-task ✓/✗ scoreboard and a total.
 - She ran the eval **at least 3 times before and 3 times after** a system-prompt
@@ -26,7 +26,7 @@
   hesitant to re-run "because it costs money," reassure her — re-running is the lesson.
 - `eval_harness_reference.py` in this folder is a complete working harness. It's your
   answer key, not hers. To sanity-check her setup independently of her code:
-  `cd ~/projects/mini-agent && uv run /path/to/eval_harness_reference.py`
+  `cd ~/Desktop/projects/mini-agent && uv run /path/to/eval_harness_reference.py`
   (it embeds 4 fallback tasks if her `tasks.json` doesn't exist yet).
 - Skim her Week 4 `main.py` beforehand so you know what her agent's loop and system
   prompt look like — Step 2 asks Claude to reuse that loop.

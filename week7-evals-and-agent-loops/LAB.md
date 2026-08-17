@@ -5,7 +5,7 @@
 This week you're working inside your Week 4 mini-agent project:
 
 ```bash
-cd ~/projects/mini-agent
+cd ~/Desktop/projects/mini-agent
 git checkout main
 git pull
 git checkout -b week7-lab
@@ -100,7 +100,7 @@ Use this shape for each task:
 }
 ```
 
-Start `claude` inside `~/projects/mini-agent` and let it help you:
+Start `claude` inside `~/Desktop/projects/mini-agent` and let it help you:
 
 > Look at my agent in main.py and its tools. Help me write evals/tasks.json with 10
 > eval tasks in this exact format: [paste the two examples above]. Make about 6 "exact"
@@ -182,7 +182,7 @@ git push -u origin week7-lab
 Now watch an agent run the *same* loop on itself — the self-correcting loop, live.
 
 ```bash
-cd ~/projects/quiz-game
+cd ~/Desktop/projects/quiz-game
 git checkout -b week7-tdd
 claude
 ```

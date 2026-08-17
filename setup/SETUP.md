@@ -26,15 +26,15 @@ to your Mac. You only need five commands to start:
 | `cd ..` | Moves up one folder | `cd ..` |
 | `mkdir` | Makes a new folder | `mkdir projects` |
 
-Practice: make a `projects` folder in your home directory — you'll keep all course work
-there.
+Practice: make a `projects` folder on your Desktop — you'll keep all course work there.
 
 ```bash
-cd ~
+cd ~/Desktop
 mkdir -p projects
 ```
 
-**✓ Verify:** `ls ~` shows `projects` in the list.
+**✓ Verify:** `ls ~/Desktop` shows `projects` in the list (and you can see the folder on
+your actual Desktop).
 
 ## 1. Homebrew (10 min)
 
@@ -92,14 +92,14 @@ The three commands to remember:
 Two-minute test drive:
 
 ```bash
-cd ~/projects
+cd ~/Desktop/projects
 uv init uv-test
 cd uv-test
 uv run main.py
 ```
 
 **✓ Verify:** it prints `Hello from uv-test!`. (You can delete the folder after:
-`cd ~/projects && rm -rf uv-test`)
+`cd ~/Desktop/projects && rm -rf uv-test`)
 
 ## 4. Node.js (5 min)
 
@@ -187,7 +187,7 @@ your key (`sk-ant-...`), and the same works for `$OPENAI_API_KEY`.
 This proves the whole chain works: uv → Python → the Anthropic API → your key.
 
 ```bash
-cd ~/projects
+cd ~/Desktop/projects
 uv init hello-agent
 cd hello-agent
 uv add anthropic

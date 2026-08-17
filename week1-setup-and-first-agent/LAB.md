@@ -58,7 +58,7 @@ account, uv, Node, VS Code, Claude Code signed in, and two API keys stored safel
 1. Make a project folder and start the agent:
 
    ```bash
-   cd ~/projects
+   cd ~/Desktop/projects
    mkdir my-website
    cd my-website
    claude

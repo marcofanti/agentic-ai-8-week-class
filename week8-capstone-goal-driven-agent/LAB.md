@@ -9,7 +9,7 @@ from the others: it's spread across the whole week, like a real software project
 One last time — and this week the habit *is* the method. Create the capstone repo now:
 
 ```bash
-cd ~/projects
+cd ~/Desktop/projects
 uv init capstone
 cd capstone
 git add -A
@@ -17,7 +17,7 @@ git commit -m "chore: capstone project start"
 gh repo create capstone --private --source=. --push
 ```
 
-(If your capstone extends `finance-app` instead, work in `~/projects/finance-app` and skip
+(If your capstone extends `finance-app` instead, work in `~/Desktop/projects/finance-app` and skip
 the `uv init` — everything else still applies.)
 
 New rule for a multi-day project: **one branch per work session, one commit (at least) at

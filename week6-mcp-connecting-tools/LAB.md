@@ -6,7 +6,7 @@ This week you'll work inside your **quiz game** project from Week 2 (if you'd ra
 your Week 4 mini-agent repo, that works too). Start the ritual:
 
 ```bash
-cd ~/projects/quiz-game
+cd ~/Desktop/projects/quiz-game
 git checkout main
 git pull
 git checkout -b week6-lab

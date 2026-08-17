@@ -8,8 +8,8 @@ course folder, then:
 
 ```bash
 cd week3-lowcode-build-an-app
-cp -r finance-app ~/projects/finance-app
-cd ~/projects/finance-app
+cp -r finance-app ~/Desktop/projects/finance-app
+cd ~/Desktop/projects/finance-app
 ```
 
 Now make it a real [repository](../GLOSSARY.md) and start this week's
@@ -82,7 +82,7 @@ what a lot of professional software work is becoming.
 Install the app's dependencies (the libraries listed in `package.json`), then start it:
 
 ```bash
-cd ~/projects/finance-app
+cd ~/Desktop/projects/finance-app
 npm install
 ```
 
@@ -109,7 +109,7 @@ If anything catches your eye as odd — remember it. It'll matter later.
 Open a **second terminal tab** (Mac: `Cmd+T`, Windows: `Ctrl+Shift+T`), then:
 
 ```bash
-cd ~/projects/finance-app
+cd ~/Desktop/projects/finance-app
 claude
 ```
 

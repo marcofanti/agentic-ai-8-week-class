@@ -6,7 +6,7 @@ First week of the ritual! Create this week's project, put it on GitHub, and do a
 work on a [branch](../GLOSSARY.md):
 
 ```bash
-cd ~/projects
+cd ~/Desktop/projects
 uv init quiz-game
 cd quiz-game
 git init
@@ -69,7 +69,7 @@ Preferences you'd otherwise repeat every conversation go there once.
 The vague attempt gets its own throwaway folder so the two results can sit side by side:
 
 ```bash
-cd ~/projects
+cd ~/Desktop/projects
 uv init quiz-vague
 cd quiz-vague
 claude
@@ -94,7 +94,7 @@ Now the real project. Pick a topic you actually care about — a band, a fandom,
 subject:
 
 ```bash
-cd ~/projects/quiz-game
+cd ~/Desktop/projects/quiz-game
 claude
 ```
 
@@ -124,12 +124,12 @@ you already know what you want.
 Clean up the throwaway:
 
 ```bash
-cd ~/projects && rm -rf quiz-vague
+cd ~/Desktop/projects && rm -rf quiz-vague
 ```
 
 ### Part D — Your first CLAUDE.md (20 min)
 
-Time to stop repeating yourself. In `~/projects/quiz-game`, create a file named exactly
+Time to stop repeating yourself. In `~/Desktop/projects/quiz-game`, create a file named exactly
 `CLAUDE.md` (VS Code: File → New File) with your standing rules — here's a starter,
 make it yours:
 

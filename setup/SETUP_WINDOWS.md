@@ -34,15 +34,19 @@ commands to start:
 
 (Yes — those are the same five commands Mac users learn. PowerShell speaks them too.)
 
-Practice: make a `projects` folder in your home directory — you'll keep all course work
-there.
+Practice: make a `projects` folder on your Desktop — you'll keep all course work there.
 
 ```powershell
-cd ~
+cd ~\Desktop
 mkdir projects
 ```
 
-**✓ Verify:** `ls ~` shows `projects` in the list.
+> If `cd ~\Desktop` says the path doesn't exist, OneDrive has probably moved your Desktop:
+> use `cd ~\OneDrive\Desktop` instead — and do the same everywhere the course says
+> `~\Desktop\projects`.
+
+**✓ Verify:** `ls ~\Desktop` shows `projects` in the list (and you can see the folder on
+your actual Desktop).
 
 ## 1. winget (5 min)
 
@@ -102,14 +106,14 @@ Open a new terminal window again, then remember the three commands:
 Two-minute test drive:
 
 ```powershell
-cd ~\projects
+cd ~\Desktop\projects
 uv init uv-test
 cd uv-test
 uv run main.py
 ```
 
 **✓ Verify:** it prints `Hello from uv-test!`. (You can delete the folder after:
-`cd ~\projects` then `Remove-Item -Recurse -Force uv-test`)
+`cd ~\Desktop\projects` then `Remove-Item -Recurse -Force uv-test`)
 
 ## 4. Node.js (5 min)
 
@@ -189,7 +193,7 @@ your key (`sk-ant-...`), and the same works for `$env:OPENAI_API_KEY`.
 This proves the whole chain works: uv → Python → the Anthropic API → your key.
 
 ```powershell
-cd ~\projects
+cd ~\Desktop\projects
 uv init hello-agent
 cd hello-agent
 uv add anthropic
@@ -225,7 +229,7 @@ The labs write commands Mac-style. When you hit one of these, translate:
 | `rm -rf folder` | `Remove-Item -Recurse -Force folder` | Deletes a folder (careful!) |
 | `command1 && command2` | run them as two separate lines | PowerShell may not know `&&` |
 | `brew install thing` | `winget install thing` | The terminal app store |
-| `~/projects/...` (slashes) | works as-is (or use `\`) | PowerShell accepts both |
+| `~/Desktop/projects/...` (slashes) | works as-is (or use `\`) | PowerShell accepts both |
 
 Everything else — `git`, `gh`, `uv`, `npm`, `claude`, `cd`, `ls`, `mkdir`, `cp -r` — works
 exactly as written.

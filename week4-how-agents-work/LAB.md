@@ -5,7 +5,7 @@
 New week, new project, same ritual. In your terminal:
 
 ```bash
-cd ~/projects
+cd ~/Desktop/projects
 uv init mini-agent
 cd mini-agent
 git init
@@ -90,7 +90,7 @@ learn; it's loops all the way down.
 Start Claude Code inside your project:
 
 ```bash
-cd ~/projects/mini-agent
+cd ~/Desktop/projects/mini-agent
 claude
 ```
 

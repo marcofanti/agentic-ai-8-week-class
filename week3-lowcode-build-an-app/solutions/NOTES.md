@@ -2,7 +2,7 @@
 
 ## What success looks like
 
-- `~/projects/finance-app` exists as her own git repo, pushed to GitHub, with commits on
+- `~/Desktop/projects/finance-app` exists as her own git repo, pushed to GitHub, with commits on
   a `week3-lab` branch: import, feature, style, and fix (≥4 commits).
 - The app runs; her savings-goal card shows in the Insights panel with a correct
   percentage; her color theme is applied across pages.

@@ -53,8 +53,13 @@ Check the boxes as you finish. Words you don't know are defined in the
 
 ## Before Week 1
 
-Do the [setup checklist](setup/SETUP.md). It's part of Week 1's lab, so you can also just
-start there.
+Do the setup checklist — [Mac](setup/SETUP.md) or [Windows](setup/SETUP_WINDOWS.md).
+It's part of Week 1's lab, so you can also just start there.
+
+The course runs on both platforms: Week 1 has a dedicated
+[Windows lab](week1-setup-and-first-agent/LAB_WINDOWS.md), and later labs use the same
+commands everywhere (the few Mac-only ones are covered by the translation table at the
+bottom of the Windows setup guide).
 
 ## Safety rules (the serious page)
 

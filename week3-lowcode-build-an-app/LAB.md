@@ -3,7 +3,8 @@
 ## 🔧 Tooling habit (5–10 min)
 
 This week you inherit an app instead of starting from scratch. First, copy it into your
-own projects folder. Open Terminal, `cd` into this course folder, then:
+own projects folder. Open your terminal (Windows: Windows Terminal), `cd` into this
+course folder, then:
 
 ```bash
 cd week3-lowcode-build-an-app
@@ -105,7 +106,7 @@ If anything catches your eye as odd — remember it. It'll matter later.
 
 ### Part B — Get a guided tour (20 min)
 
-Open a **second Terminal tab** (Cmd+T), then:
+Open a **second terminal tab** (Mac: `Cmd+T`, Windows: `Ctrl+Shift+T`), then:
 
 ```bash
 cd ~/projects/finance-app

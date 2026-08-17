@@ -1,7 +1,6 @@
-# Week 1 — Setup & Your First Agent
+# Week 1 — Setup & Your First Agent (Windows)
 
-> On a Windows PC? Use [LAB_WINDOWS.md](LAB_WINDOWS.md) instead. Same lab, Windows
-> commands.
+> On a Mac? Use [LAB.md](LAB.md) instead. Same lab, Mac commands.
 
 ## 🔧 Tooling habit (this week: first time!)
 
@@ -47,18 +46,20 @@ in a chat. (Full rules in the [README](../README.md).)
 
 ### Part A — Setup (60–75 min)
 
-Work through the entire [setup checklist](../setup/SETUP.md), including the smoke test at
-the end. Don't skip the **✓ Verify** steps — the whole course depends on this foundation.
+Work through the entire [Windows setup checklist](../setup/SETUP_WINDOWS.md), including
+the smoke test at the end. Don't skip the **✓ Verify** steps — the whole course depends on
+this foundation. Bookmark the **Mac → Windows translation table** at the bottom of that
+page; later labs write commands Mac-style and that table is your decoder ring.
 
-Done? You now have: a terminal you're not scared of, Homebrew, git + your own GitHub
+Done? You now have: a terminal you're not scared of, winget, git + your own GitHub
 account, uv, Node, VS Code, Claude Code signed in, and two API keys stored safely.
 
 ### Part B — Watch an agent work (30 min)
 
 1. Make a project folder and start the agent:
 
-   ```bash
-   cd ~/projects
+   ```powershell
+   cd ~\projects
    mkdir my-website
    cd my-website
    claude
@@ -76,16 +77,16 @@ account, uv, Node, VS Code, Claude Code signed in, and two API keys stored safel
 
 4. Open the result:
 
-   ```bash
-   open index.html
+   ```powershell
+   start index.html
    ```
 
    Your website, in your browser, and you didn't write a line of HTML.
 
 5. Now put it on GitHub — your first commit. Back in the terminal (type `/exit` to leave
-   Claude, or open a second Terminal tab):
+   Claude, or open a second tab with `Ctrl+Shift+T`):
 
-   ```bash
+   ```powershell
    git init
    git add index.html
    git commit -m "feat: my first agent-built website"
@@ -103,8 +104,13 @@ Back in `claude`, redesign the site **three times**, one prompt each. Ideas:
 2. "Redesign it in the style of a fancy magazine."
 3. Your call — the weirder the better.
 
-After each redesign, refresh the browser. Then pick your favorite and commit it
-(`git add -A && git commit -m "style: final design"` — then `git push`).
+After each redesign, refresh the browser. Then pick your favorite and commit it:
+
+```powershell
+git add -A
+git commit -m "style: final design"
+git push
+```
 
 **Stretch:** ask Claude *"explain what you changed between the last two versions and
 why"* — getting the agent to explain itself is a skill you'll use all course.
@@ -122,8 +128,10 @@ Demo your website and its GitHub page, then explain, in your own words:
 - **A setup ✓ Verify step fails** → re-run the install command for that step and read the
   output slowly; most failures print the fix. Still stuck? That's a Dad question — setup
   problems are normal and not your fault.
-- **`claude` isn't found** → close the Terminal window and open a new one (installs only
+- **`claude` isn't found** → close the terminal window and open a new one (installs only
   appear in new windows), then try again.
+- **`winget` command fails** → install "App Installer" from the Microsoft Store, open a
+  new terminal, and retry.
 - **The website looks broken** → tell Claude exactly *what you see*: "the heading overlaps
   the picture" beats "it's broken." Specific observations are how you steer an agent.
 - **Permission prompt you don't understand** → ask Claude "explain what this command does

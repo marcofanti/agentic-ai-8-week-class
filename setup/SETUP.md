@@ -125,7 +125,20 @@ search by name):
 1. **Claude Code** (by Anthropic)
 2. **Python** (by Microsoft)
 
-**✓ Verify:** both extensions show "Installed" in the Extensions panel.
+Now set up the `code` command so you can open files and folders in VS Code straight from
+the terminal:
+
+1. In VS Code, press `Cmd+Shift+P` to open the Command Palette.
+2. Type `shell command`.
+3. Select **Shell Command: Install 'code' command in PATH** and press Enter.
+4. Enter your Mac password if asked.
+5. **Restart your terminal** (quit and reopen) for the change to take effect.
+
+From now on you can type `code somefile.txt` to open a file in VS Code, or `code .` to
+open the current folder.
+
+**✓ Verify:** both extensions show "Installed" in the Extensions panel, and running
+`code --version` in a fresh terminal prints a version number.
 
 ## 6. Claude Code (10 min)
 
@@ -156,10 +169,11 @@ You'll create two keys:
 2. **OpenAI key** — [platform.openai.com](https://platform.openai.com) →
    API Keys → Create new secret key. (Dad: set a monthly budget under Limits first.)
 
-Store them in your shell config so every project can use them. Open the file:
+Store them in your shell config so every project can use them. Open the file in VS Code
+(this uses the `code` command you set up in step 5):
 
 ```bash
-open -e ~/.zshrc
+code ~/.zshrc
 ```
 
 Add these two lines at the bottom (paste your real keys between the quotes), save, close:

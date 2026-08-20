@@ -222,6 +222,7 @@ The labs write commands Mac-style. When you hit one of these, translate:
 |---|---|---|
 | `open index.html` | `start index.html` | Opens a file in its default app |
 | `open -e somefile` | `notepad somefile` | Opens a file in a text editor |
+| `code somefile` | `code somefile` (works as-is) | Opens a file in VS Code |
 | `source ~/.zshrc` | close terminal, open a new one | Reloads environment variables |
 | `echo $ANTHROPIC_API_KEY` | `echo $env:ANTHROPIC_API_KEY` | Prints an environment variable |
 | add lines to `~/.zshrc` | `setx NAME "value"`, then new terminal | Sets an environment variable |

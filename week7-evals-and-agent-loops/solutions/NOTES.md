@@ -19,8 +19,8 @@
 - **Both API keys must work.** The agent uses `ANTHROPIC_API_KEY`, the judge uses
   `OPENAI_API_KEY`. The OpenAI key may not have been touched since setup week — verify
   it *before* the lab: a dead judge key 40 minutes in is demoralizing. Quick check:
-  `echo $OPENAI_API_KEY` shows something, and the platform.openai.com account has
-  billing/credits active.
+  `mini-agent/.env` contains an `OPENAI_API_KEY` line, and the platform.openai.com
+  account has billing/credits active.
 - **Cost expectation:** a full eval run costs cents (10 short agent calls + ~4 tiny
   judge calls). Even a whole afternoon of re-runs stays well under a dollar. If she's
   hesitant to re-run "because it costs money," reassure her — re-running is the lesson.

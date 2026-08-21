@@ -111,10 +111,28 @@ You're going to build `agent.py` with three tools: a **calculator**, a **read_fi
 and a **save_note** tool that appends to `notes.txt`. Claude Code can help you type it,
 but *you* need to understand every piece — so read this architecture walk-through first.
 
-**Step 1 — install the SDK** (the official Python library for talking to Claude):
+**Step 1 — install the libraries and create your `.env`.** The `anthropic` package is
+the official SDK for talking to Claude; `python-dotenv` loads your keys:
 
 ```bash
-uv add anthropic
+uv add anthropic python-dotenv
+code .env
+```
+
+In the new `.env` file, paste your two key lines from your password manager (exactly like
+the setup smoke test), save, close. Then protect it *before* your first commit:
+
+```bash
+echo ".env" >> .gitignore
+git check-ignore .env
+```
+
+(`git check-ignore` must print `.env` — if it doesn't, fix `.gitignore` now.) And
+remember: the first two lines of `agent.py` must be
+
+```python
+from dotenv import load_dotenv
+load_dotenv()  # reads .env so the SDK can find your key
 ```
 
 **Step 2 — understand the three pieces.** Your whole agent is:
@@ -229,9 +247,10 @@ Then do the commit + push from the Tooling habit section.
 
 ## 🆘 If you get stuck
 
-- **`ANTHROPIC_API_KEY` / authentication error** → your key isn't visible to the script.
-  Run `echo $ANTHROPIC_API_KEY` (Windows: `echo $env:ANTHROPIC_API_KEY`) — if it prints
-  nothing, open a new terminal window (Mac: or `source ~/.zshrc`) and try again.
+- **Authentication error** → the script can't see your key. Check three things: a `.env`
+  exists in *this* folder (`cat .env` — Windows: `type .env`), the key line has no typos
+  or stray spaces, and `load_dotenv()` runs at the very top of agent.py — before the
+  Anthropic client is created.
 - **`ModuleNotFoundError: anthropic`** → you probably ran `python agent.py`. Always
   `uv run agent.py` — uv knows about the package, plain python doesn't.
 - **The loop never ends** → add a counter and stop after ~10 laps, then print

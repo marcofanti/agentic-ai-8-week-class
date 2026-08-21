@@ -10,7 +10,10 @@ git checkout main
 git pull
 git checkout -b week7-lab
 mkdir -p evals
+git check-ignore .env
 ```
+
+(That last command must print `.env` — this project's keys stay out of git, always.)
 
 At the end of the lab: commit everything and push the branch. By now your fingers
 should do this without your brain's help — that's the whole point of the habit.
@@ -113,11 +116,11 @@ math on at least two exact tasks with a real calculator.
 
 ### Step 2 — Build the runner (~35 min)
 
-First add the two libraries your runner needs (anthropic for your agent, openai for the
-judge):
+Your project already has `anthropic` and `python-dotenv` from Week 4, and its `.env`
+already holds both keys — so just add the judge's library:
 
 ```bash
-uv add anthropic openai
+uv add openai
 ```
 
 Now have Claude build `evals/run_evals.py`. Be specific — you learned how in Week 2:
@@ -129,8 +132,8 @@ Now have Claude build `evals/run_evals.py`. Be specific — you learned how in W
 > question, the criteria, and my agent's answer to the OpenAI model "gpt-5-mini" with a
 > strict judge prompt: reply with exactly PASS or FAIL on the first line, then a
 > one-sentence reason; (5) print a scoreboard: one line per task with ✓ or ✗ and the
-> reason for failures, then a total like "Score: 7/10". Both API keys are already in my
-> environment. Run it via uv run.
+> reason for failures, then a total like "Score: 7/10". Load both API keys from this
+> project's .env with python-dotenv, the same way main.py does. Run it via uv run.
 
 *(Model names change over time. If `gpt-5-mini` errors, ask Claude: "what's the current
 cheapest OpenAI model? Update the judge to use it.")*

@@ -3,6 +3,11 @@
 Plain-language definitions, in alphabetical order. If a lab uses a word you don't know and
 it's not here, that's a bug — tell Dad and we'll add it.
 
+**.env file** — A tiny text file of `KEY=value` lines holding a project's secrets, like
+API keys. Git is told to ignore it (via `.gitignore`), and your code loads it at startup
+with the `python-dotenv` package. Its shareable twin, `.env.example`, has the same shape
+with fake values and is safe to commit.
+
 **Agent** — An AI that doesn't just answer questions, but takes *actions* to reach a goal:
 reading files, running commands, calling tools, checking its results, and trying again.
 Chat AI answers; agentic AI *does*.

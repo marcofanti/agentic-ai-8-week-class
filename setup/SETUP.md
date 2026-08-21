@@ -169,48 +169,87 @@ You'll create two keys:
 2. **OpenAI key** — [platform.openai.com](https://platform.openai.com) →
    API Keys → Create new secret key. (Dad: set a monthly budget under Limits first.)
 
-Store them in your shell config so every project can use them. Open the file in VS Code
-(this uses the `code` command you set up in step 5):
+**Save both in your password manager** (1Password, Apple Passwords, Bitwarden — whichever
+your family uses) as a secure note called "Course API keys". That's the master copy.
+You'll copy from it into each project that needs keys.
 
-```bash
-code ~/.zshrc
-```
+**How projects use them — the `.env` pattern.** Each project that talks to an API gets its
+own `.env` file: a two-line text file holding the keys, which git is told to ignore. Your
+Python code loads it at startup. This is how professionals do it, and you'll repeat the
+same three moves in every project that needs keys:
 
-Add these two lines at the bottom (paste your real keys between the quotes), save, close:
+1. Create a `.env` file in the project folder (keys copied from your password manager):
 
-```bash
-export ANTHROPIC_API_KEY="sk-ant-..."
-export OPENAI_API_KEY="sk-..."
-```
+   ```
+   ANTHROPIC_API_KEY=sk-ant-your-real-key-here
+   OPENAI_API_KEY=sk-your-real-key-here
+   ```
 
-Then reload:
+2. Make sure git ignores it — *before* the first commit:
 
-```bash
-source ~/.zshrc
-```
+   ```bash
+   echo ".env" >> .gitignore
+   ```
+
+3. Load it in Python with the `python-dotenv` package: `uv add python-dotenv`, then at the
+   very top of the script:
+
+   ```python
+   from dotenv import load_dotenv
+   load_dotenv()
+   ```
+
+There's a template at [.env.example](.env.example) — projects often ship a file like this:
+same shape, fake values, safe to commit. Copy it into a project as `.env` and fill in the
+real keys.
+
+> **Why not set the keys globally** (the "add exports to `~/.zshrc`" advice you'll see
+> online)? Because Claude Code looks for a global `ANTHROPIC_API_KEY`, and when it finds
+> one it switches from your Claude subscription to pay-per-use API billing. Per-project
+> `.env` files keep each key exactly where it's needed and nowhere else — which is also
+> just better security.
 
 **The rules** (also in the README, because they matter):
 - Keys never go in code files, git, chats, screenshots, or to friends.
-- If one ever leaks: tell Dad, delete the key in the console, make a new one.
+- `.env` goes into `.gitignore` in every project, every time — before the first commit.
+- If a key ever leaks: tell Dad, delete the key in the console, make a new one.
 
-**✓ Verify:** `echo $ANTHROPIC_API_KEY | cut -c1-10` prints the first 10 characters of
-your key (`sk-ant-...`), and the same works for `$OPENAI_API_KEY`.
+**✓ Verify:** both keys are saved in your password manager, and you can explain to Dad
+what a `.env` file is and why git must ignore it. (The real test is next — the smoke test.)
 
-## 8. Smoke test — everything at once (5 min)
+## 8. Smoke test — everything at once (10 min)
 
-This proves the whole chain works: uv → Python → the Anthropic API → your key.
+This proves the whole chain works: uv → Python → your `.env` → the Anthropic API.
 
 ```bash
 cd ~/Desktop/projects
 uv init hello-agent
 cd hello-agent
-uv add anthropic
+uv add anthropic python-dotenv
+git init
 ```
+
+Create this project's `.env` — your first one. This opens a new file in VS Code:
+
+```bash
+code .env
+```
+
+Paste the two key lines from your password manager (the format from step 7), save, close.
+Then tell git to ignore it, and prove that it worked:
+
+```bash
+echo ".env" >> .gitignore
+git check-ignore .env
+```
+
+If that prints `.env`, git will never commit your keys. If it prints nothing, stop and fix
+`.gitignore` before going on.
 
 Now start `claude` in that folder and ask:
 
-> Write a short main.py that uses the anthropic library to ask Claude for a haiku about
-> learning to code, and prints it. Use the ANTHROPIC_API_KEY from the environment.
+> Write a short main.py that loads my .env file with python-dotenv, then uses the
+> anthropic library to ask Claude for a haiku about learning to code, and prints it.
 
 Then run what it wrote:
 
@@ -218,6 +257,6 @@ Then run what it wrote:
 uv run main.py
 ```
 
-**✓ Verify:** a haiku appears in your terminal. 🎉
+**✓ Verify:** a haiku appears in your terminal, and `git check-ignore .env` prints `.env`. 🎉
 
 You're fully set up. Head to [Week 1](../week1-setup-and-first-agent/LAB.md).

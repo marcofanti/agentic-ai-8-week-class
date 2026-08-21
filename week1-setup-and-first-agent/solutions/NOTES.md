@@ -5,8 +5,8 @@
 - Every ✓ Verify in SETUP.md passes, including the API haiku smoke test.
 - A `my-website` repo exists on her GitHub account with ≥2 commits.
 - She can articulate: chat AI answers / agentic AI acts; the loop is
-  think → pick tool → act → observe → repeat; keys live in `~/.zshrc`, never in
-  code/git/chats.
+  think → pick tool → act → observe → repeat; keys live in her password manager and in
+  per-project git-ignored `.env` files, never in code/git/chats.
 
 ## Before the lab (your prep, ~20 min)
 
@@ -23,8 +23,10 @@
    found → new window → retry."
 3. **Password typing shows nothing** — warn her in advance or she'll think it's frozen.
 4. **`gh auth login` choices** — pick GitHub.com → HTTPS → login with web browser.
-5. **Editing `~/.zshrc`** — a stray character breaks the file. If `source ~/.zshrc`
-   errors, open it and check the two export lines are exactly right.
+5. **`.env` formatting** — a stray space around `=`, quotes, or a "smart quote" from
+   pasting breaks the key. If the smoke test can't authenticate, open `.env` and check
+   each line is exactly `KEY=value`. Also make sure she has a password manager set up
+   *before* step 7 — that's where the master copies live.
 
 ## Hint escalation (don't jump to answers)
 

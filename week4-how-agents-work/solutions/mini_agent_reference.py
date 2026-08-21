@@ -1,10 +1,10 @@
 """A minimal AI agent, built from scratch — reference implementation for Week 4.
 
 Setup (inside a uv project):
-    uv add anthropic
+    uv add anthropic python-dotenv
     uv run mini_agent_reference.py
 
-Reads ANTHROPIC_API_KEY from the environment (it's exported in ~/.zshrc).
+Loads ANTHROPIC_API_KEY from this project's .env file (see setup/SETUP.md step 7).
 
 The whole agent is three pieces:
   A. TOOLS      — a list telling the model what tools exist
@@ -16,13 +16,16 @@ import os
 import sys
 
 import anthropic
+from dotenv import load_dotenv
+
+load_dotenv()  # pull the API key out of this project's .env file
 
 MODEL = "claude-sonnet-5"
 
 if not os.environ.get("ANTHROPIC_API_KEY"):
     sys.exit(
-        "ANTHROPIC_API_KEY is not set. Add it to ~/.zshrc (see setup/SETUP.md step 7), "
-        "then open a new terminal and try again."
+        "ANTHROPIC_API_KEY not found. Create a .env file in this folder holding your key "
+        "(see setup/SETUP.md step 7), then try again."
     )
 
 # --- Piece A: the TOOLS list ------------------------------------------------

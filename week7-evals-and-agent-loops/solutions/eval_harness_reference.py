@@ -4,8 +4,8 @@ Runs each task in evals/tasks.json through a mini agent (Anthropic API with
 calculator + read_file tools), scores "exact" tasks in plain Python, sends
 "judged" tasks to an OpenAI judge, and prints a scoreboard.
 
-Run from the mini-agent project root (needs `uv add anthropic openai` done once,
-and ANTHROPIC_API_KEY + OPENAI_API_KEY in the environment):
+Run from the mini-agent project root (needs `uv add anthropic openai python-dotenv`
+done once, and a `.env` file holding ANTHROPIC_API_KEY + OPENAI_API_KEY):
 
     uv run eval_harness_reference.py
 """
@@ -17,12 +17,15 @@ from pathlib import Path
 
 import anthropic
 import openai
+from dotenv import load_dotenv
+
+load_dotenv()  # pull both API keys out of this project's .env file
 
 for key in ("ANTHROPIC_API_KEY", "OPENAI_API_KEY"):
     if not os.environ.get(key):
         sys.exit(
-            f"{key} is not set. Add it to ~/.zshrc (see setup/SETUP.md step 7), "
-            "then open a new terminal and try again."
+            f"{key} not found. Add it to this project's .env file "
+            "(see setup/SETUP.md step 7), then try again."
         )
 
 AGENT_MODEL = "claude-sonnet-5"

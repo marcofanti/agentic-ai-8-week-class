@@ -18,19 +18,14 @@ detail.
 - `mini-agent` repo on GitHub with the `week4-lab` branch pushed.
 
 A complete working version is in `mini_agent_reference.py` (runnable as-is:
-`uv add anthropic` then `uv run mini_agent_reference.py` inside a uv project). Consult
+`uv add anthropic python-dotenv`, a `.env` with her key, then `uv run mini_agent_reference.py` inside a uv project). Consult
 it if her version goes sideways — don't hand it over.
 
 ## Before the lab (your prep, ~10 min)
 
-- **Verify her API key works.** In her terminal:
-
-  ```bash
-  echo $ANTHROPIC_API_KEY
-  ```
-
-  Should print a `sk-ant-...` key. If empty, check the export lines in `~/.zshrc` (Week 1
-  setup) and open a fresh terminal.
+- **Verify her key still works.** Quickest check: re-run the setup smoke test —
+  `cd ~/Desktop/projects/hello-agent && uv run main.py` should still print a haiku. If it
+  errors, sort out the `.env` (key rotated? line edited?) *before* the lab.
 - **Cost check:** this lab is cheap — each full agent run is a handful of small API calls.
   Expect the whole lab, including the challenge and re-runs, to cost **cents** (well under
   a dollar). The spend limits from Week 1 cover any accident.
@@ -39,8 +34,9 @@ it if her version goes sideways — don't hand it over.
 ## Where kids typically get stuck
 
 1. **Key not visible to the script** — most common failure, looks like an
-   `authentication_error`. Fix: new terminal window or `source ~/.zshrc`. Same reflex as
-   Week 1: "not found → new window → retry."
+   `authentication_error`. It's one of three things: no `.env` in *this* project (each
+   project gets its own copy), a typo or stray space in the key line, or `load_dotenv()`
+   missing / called after the client is created. `cat .env` and read it slowly.
 2. **`python agent.py` instead of `uv run agent.py`** — gives
    `ModuleNotFoundError: anthropic`. The uv-managed environment only activates through
    `uv run`.

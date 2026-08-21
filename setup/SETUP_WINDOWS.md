@@ -170,39 +170,87 @@ You'll create two keys:
 2. **OpenAI key** — [platform.openai.com](https://platform.openai.com) →
    API Keys → Create new secret key. (Dad: set a monthly budget under Limits first.)
 
-Store them as **user environment variables** so every project can use them. In the
-terminal (paste your real keys between the quotes):
+**Save both in your password manager** (1Password, Bitwarden, whichever your family uses)
+as a secure note called "Course API keys". That's the master copy. You'll copy from it
+into each project that needs keys.
 
-```powershell
-setx ANTHROPIC_API_KEY "sk-ant-..."
-setx OPENAI_API_KEY "sk-..."
-```
+**How projects use them — the `.env` pattern.** Each project that talks to an API gets its
+own `.env` file: a two-line text file holding the keys, which git is told to ignore. Your
+Python code loads it at startup. You'll repeat the same three moves in every project that
+needs keys:
 
-`setx` saves the variable for *future* terminal windows only — so close the terminal and
-open a new one before the verify step.
+1. Create a `.env` file in the project folder (keys copied from your password manager):
+
+   ```
+   ANTHROPIC_API_KEY=sk-ant-your-real-key-here
+   OPENAI_API_KEY=sk-your-real-key-here
+   ```
+
+2. Make sure git ignores it — *before* the first commit:
+
+   ```powershell
+   Add-Content .gitignore ".env"
+   ```
+
+3. Load it in Python with the `python-dotenv` package: `uv add python-dotenv`, then at the
+   very top of the script:
+
+   ```python
+   from dotenv import load_dotenv
+   load_dotenv()
+   ```
+
+There's a template at [.env.example](.env.example) — projects often ship a file like this:
+same shape, fake values, safe to commit. Copy it into a project as `.env` and fill in the
+real keys.
+
+> **Why not set the keys globally** (with `setx`, or the "environment variables" advice
+> you'll see online)? Because Claude Code looks for a global `ANTHROPIC_API_KEY`, and when
+> it finds one it switches from your Claude subscription to pay-per-use API billing.
+> Per-project `.env` files keep each key exactly where it's needed and nowhere else —
+> which is also just better security.
 
 **The rules** (also in the README, because they matter):
 - Keys never go in code files, git, chats, screenshots, or to friends.
-- If one ever leaks: tell Dad, delete the key in the console, make a new one.
+- `.env` goes into `.gitignore` in every project, every time — before the first commit.
+- If a key ever leaks: tell Dad, delete the key in the console, make a new one.
 
-**✓ Verify:** `$env:ANTHROPIC_API_KEY.Substring(0,10)` prints the first 10 characters of
-your key (`sk-ant-...`), and the same works for `$env:OPENAI_API_KEY`.
+**✓ Verify:** both keys are saved in your password manager, and you can explain to Dad
+what a `.env` file is and why git must ignore it. (The real test is next — the smoke test.)
 
-## 8. Smoke test — everything at once (5 min)
+## 8. Smoke test — everything at once (10 min)
 
-This proves the whole chain works: uv → Python → the Anthropic API → your key.
+This proves the whole chain works: uv → Python → your `.env` → the Anthropic API.
 
 ```powershell
 cd ~\Desktop\projects
 uv init hello-agent
 cd hello-agent
-uv add anthropic
+uv add anthropic python-dotenv
+git init
 ```
+
+Create this project's `.env` — your first one. This opens a new file in VS Code:
+
+```powershell
+code .env
+```
+
+Paste the two key lines from your password manager (the format from step 7), save, close.
+Then tell git to ignore it, and prove that it worked:
+
+```powershell
+Add-Content .gitignore ".env"
+git check-ignore .env
+```
+
+If that prints `.env`, git will never commit your keys. If it prints nothing, stop and fix
+`.gitignore` before going on.
 
 Now start `claude` in that folder and ask:
 
-> Write a short main.py that uses the anthropic library to ask Claude for a haiku about
-> learning to code, and prints it. Use the ANTHROPIC_API_KEY from the environment.
+> Write a short main.py that loads my .env file with python-dotenv, then uses the
+> anthropic library to ask Claude for a haiku about learning to code, and prints it.
 
 Then run what it wrote:
 
@@ -210,7 +258,7 @@ Then run what it wrote:
 uv run main.py
 ```
 
-**✓ Verify:** a haiku appears in your terminal. 🎉
+**✓ Verify:** a haiku appears in your terminal, and `git check-ignore .env` prints `.env`. 🎉
 
 You're fully set up. Head to [Week 1 (Windows version)](../week1-setup-and-first-agent/LAB_WINDOWS.md).
 
@@ -223,9 +271,8 @@ The labs write commands Mac-style. When you hit one of these, translate:
 | `open index.html` | `start index.html` | Opens a file in its default app |
 | `open -e somefile` | `notepad somefile` | Opens a file in a text editor |
 | `code somefile` | `code somefile` (works as-is) | Opens a file in VS Code |
-| `source ~/.zshrc` | close terminal, open a new one | Reloads environment variables |
-| `echo $ANTHROPIC_API_KEY` | `echo $env:ANTHROPIC_API_KEY` | Prints an environment variable |
-| add lines to `~/.zshrc` | `setx NAME "value"`, then new terminal | Sets an environment variable |
+| `cat .env` | `type .env` | Shows a file's contents |
+| `echo ".env" >> .gitignore` | `Add-Content .gitignore ".env"` | Appends a line to a file |
 | new Terminal tab: `Cmd+T` | new tab: `Ctrl+Shift+T` | Windows Terminal shortcut |
 | `rm -rf folder` | `Remove-Item -Recurse -Force folder` | Deletes a folder (careful!) |
 | `command1 && command2` | run them as two separate lines | PowerShell may not know `&&` |

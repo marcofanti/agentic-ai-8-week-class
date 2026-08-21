@@ -40,8 +40,8 @@ risky. Those permission prompts are your steering wheel — read them.
 Some of our labs make Python programs that talk to Claude directly over the **API** — a
 doorway programs use to talk to other programs. The **API key** is what proves the request
 comes from *you*, and it's connected to real billing. Which is why the setup treats keys
-like a debit card number: environment variables only, never in code, never in git, never
-in a chat. (Full rules in the [README](../README.md).)
+like a debit card number: they live in your password manager and in each project's
+git-ignored `.env` file — never in code, never in git, never in a chat. (Full rules in the [README](../README.md).)
 
 ## 🛠️ Guided exercise (~90 min)
 

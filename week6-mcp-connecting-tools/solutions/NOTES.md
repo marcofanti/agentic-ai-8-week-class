@@ -32,7 +32,7 @@
 
    The keyless HTTP form has worked with lower rate limits, but if your pre-test fails or
    gets rate-limited, create a free key at context7.com (dashboard), use the header form,
-   and treat the key by the course rules: shell config or `.env`, never in git — and note
+   and treat the key by the course rules: password manager + git-ignored `.env`, never in git — and note
    the add command itself embeds the key in local Claude config, which is fine (it's
    local-only), but it must not go in `.mcp.json` at project scope.
 

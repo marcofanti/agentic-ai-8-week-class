@@ -70,8 +70,8 @@ can also do the wrong thing. Professionals follow these rules too.
    command?", read it. If you don't understand what a command does, ask Claude to explain
    it *before* approving — that's a totally normal thing to ask.
 2. **API keys are secrets.** They're linked to real money. They never go in your code, in
-   git, in a chat message, in a screenshot, or to a friend. They live in your `.env` file
-   or shell config, nowhere else.
+   git, in a chat message, in a screenshot, or to a friend. They live in your password
+   manager and in each project's git-ignored `.env` file, nowhere else.
 3. **If a key leaks** (you accidentally committed or pasted it): tell Dad, then go to the
    API console and delete/rotate the key. Leaked keys get found by bots in minutes — speed
    matters, embarrassment doesn't.

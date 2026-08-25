@@ -51,8 +51,9 @@ steering lesson.
 
 ## Where kids typically get stuck
 
-1. **Copying the app** — the course folder path has spaces; if she free-hands the `cp`
-   command it'll fail. The lab has her `cd` into the week folder first; keep her on rails.
+1. **Copying the app** — the lab's `cd` assumes the class repo was cloned to
+   `~/Desktop/agentic-ai-8-week-class` (the setup guide does this). If she cloned it
+   somewhere else, fix the first `cd` and keep her on rails from there.
 2. **Two terminals** — the dev server must keep running in one tab while `claude` runs in
    another. If the browser goes dead, the dev server tab got closed or Ctrl+C'd.
 3. **Committing `node_modules`** — the lab creates `.gitignore` *before* `npm install`.

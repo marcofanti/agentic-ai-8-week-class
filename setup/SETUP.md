@@ -70,7 +70,16 @@ brew install gh
 gh auth login
 ```
 
-**✓ Verify:** `git --version` prints a version, and `gh auth status` says you're logged in.
+Now grab the class repo — every week's lab and starter files live in it. Clone it onto your
+Desktop, right next to `projects`:
+
+```bash
+cd ~/Desktop
+git clone https://github.com/marcofanti/agentic-ai-8-week-class.git
+```
+
+**✓ Verify:** `git --version` prints a version, `gh auth status` says you're logged in, and
+`ls ~/Desktop/agentic-ai-8-week-class` lists the week folders.
 
 ## 3. uv — our Python toolkit (10 min)
 

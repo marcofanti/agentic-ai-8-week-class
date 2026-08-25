@@ -3,11 +3,11 @@
 ## 🔧 Tooling habit (5–10 min)
 
 This week you inherit an app instead of starting from scratch. First, copy it into your
-own projects folder. Open your terminal (Windows: Windows Terminal), `cd` into this
-course folder, then:
+own projects folder. Open your terminal (Windows: Windows Terminal) and run (this assumes
+you cloned the class repo into `~/Desktop`):
 
 ```bash
-cd week3-lowcode-build-an-app
+cd ~/Desktop/agentic-ai-8-week-class/week3-lowcode-build-an-app
 cp -r finance-app ~/Desktop/projects/finance-app
 cd ~/Desktop/projects/finance-app
 ```

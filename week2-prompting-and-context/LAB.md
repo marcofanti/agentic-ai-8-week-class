@@ -2,6 +2,14 @@
 
 ## 🔧 Tooling habit (5–10 min)
 
+Before anything else, pull the latest class materials (labs get fixes and updates
+between weeks):
+
+```bash
+cd ~/Desktop/agentic-ai-8-week-class
+git pull
+```
+
 First week of the ritual! Create this week's project, put it on GitHub, and do all your
 work on a [branch](../GLOSSARY.md):
 

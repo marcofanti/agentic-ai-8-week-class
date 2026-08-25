@@ -6,6 +6,14 @@ from the others: it's spread across the whole week, like a real software project
 
 ## 🔧 Tooling habit (5–10 min)
 
+Before anything else, pull the latest class materials (labs get fixes and updates
+between weeks):
+
+```bash
+cd ~/Desktop/agentic-ai-8-week-class
+git pull
+```
+
 One last time — and this week the habit *is* the method. Create the capstone repo now:
 
 ```bash

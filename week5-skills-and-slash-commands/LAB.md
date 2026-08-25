@@ -2,6 +2,14 @@
 
 ## 🔧 Tooling habit (5–10 min)
 
+Before anything else, pull the latest class materials (labs get fixes and updates
+between weeks):
+
+```bash
+cd ~/Desktop/agentic-ai-8-week-class
+git pull
+```
+
 This week your "project" is a little unusual: it's your personal skills folder,
 `~/.claude/skills`. That folder isn't a git [repo](../GLOSSARY.md), so we'll keep a copy of
 everything you write in one — that way your skills have history and live on GitHub like

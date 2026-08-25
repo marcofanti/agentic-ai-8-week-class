@@ -2,6 +2,14 @@
 
 ## 🔧 Tooling habit (5–10 min)
 
+Before anything else, pull the latest class materials (labs get fixes and updates
+between weeks):
+
+```bash
+cd ~/Desktop/agentic-ai-8-week-class
+git pull
+```
+
 This week you'll work inside your **quiz game** project from Week 2 (if you'd rather use
 your Week 4 mini-agent repo, that works too). Start the ritual:
 

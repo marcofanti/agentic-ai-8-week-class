@@ -2,6 +2,14 @@
 
 ## 🔧 Tooling habit (5–10 min)
 
+Before anything else, pull the latest class materials (labs get fixes and updates
+between weeks):
+
+```bash
+cd ~/Desktop/agentic-ai-8-week-class
+git pull
+```
+
 This week you inherit an app instead of starting from scratch. First, copy it into your
 own projects folder. Open your terminal (Windows: Windows Terminal) and run (this assumes
 you cloned the class repo into `~/Desktop`):

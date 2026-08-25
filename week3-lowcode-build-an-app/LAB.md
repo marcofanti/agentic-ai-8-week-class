@@ -119,6 +119,15 @@ Ask for the tour:
 > through what happens, file by file, from the moment I open the app to the moment I see
 > the dashboard.
 
+**A note on why Claude behaves the way it does here.** Open the file `CLAUDE.md` in the
+project folder and read it — it's short. Claude reads that file automatically whenever it
+starts in this folder, and treats it as house rules: explain simply, change only what's
+asked, say which files it will touch, and — importantly — *don't volunteer bugs or fixes
+unless you report a problem*. That last rule is there because agents love to point out
+everything they'd fix, and there's a bug in this app you're meant to find *yourself* in the
+Challenge. This is a real professional habit: teams keep a `CLAUDE.md` in every repo to
+tell the agent how that project works and how they want it to behave.
+
 Read the answer slowly. Then dig into whatever made you curious — for example:
 
 > How does the app know I'm logged in? Show me where that happens and explain it simply.
